@@ -1,0 +1,29 @@
+.header {
+    grid-area: h;
+    background-color: #161618;
+    border-left: 4px solid #161618;
+    border-top: 4px solid #161618;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-right: 4px solid #00a4ff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.header__logo {
+    position: relative;
+    z-index: 9998;
+    width: 0;
+    height: 0;
+    border-top: 0 solid transparent;
+    border-left: 168px solid #00a4ff;
+    border-bottom: 72px solid transparent;
+
+}
+.header__logo img {
+    z-index: 9999;
+    left: -163px;
+    top: 0;
+    position: relative;
+    width: 55px;
+    margin-left: 10px;
+    transform: rotate(15deg);
+}

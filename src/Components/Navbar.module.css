@@ -1,0 +1,19 @@
+.nav {
+    grid-area: n;
+    background-color: #161618;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: 4px solid #00a4ff;
+}
+.nav__inner {
+    margin: 20px auto;
+    width: 60%;
+    height: 80%;
+    list-style-type:none;
+}
+.nav__inner li {
+    color: #e8e5e0;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
