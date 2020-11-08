@@ -1,21 +1,22 @@
 import React from 'react';
+import Post from "./Post/Post";
 import s from './MyPosts.module.css';
+
 
 const MyPosts = () => {
     return <div className={s.posts}>
-            <div>My posts</div>
+        <div className={s.title}>My posts</div>
         <textarea></textarea>
         <button>Add post</button>
-        <div className={s.item}>
-            <img src="https://cdn.pixabay.com/photo/2014/05/11/13/39/bird-341898_960_720.jpg"></img>
-            <div>
-                Post2
-            </div>
-        </div>
-        
+        <div className={s.items}>
+            <Post message='Hi, how are you?' likeCount='♡ 15'/>
+            <Post message="Lol it's my first post" likeCount='♡ 21'/>
 
 
         </div>
+
+
+    </div>
 
 }
 
