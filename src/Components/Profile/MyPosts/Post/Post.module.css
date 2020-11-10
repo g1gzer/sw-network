@@ -1,5 +1,11 @@
 .item {
-
+    display: flex;
+    align-items: center;
+    height: 150px;
+    border-bottom: solid #161618 1px;
+}
+.item:first-child {
+    border-top: solid #161618 1px;
 }
 .item img {
     width: 80px;
@@ -7,5 +13,24 @@
     border-radius: 200px;
     object-fit: cover;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin-left: 4%;
+    cursor: pointer;
 }
-
+.inner {
+    width: 100%;
+    margin-left: 4%;
+    height: 80%;
+}
+.userName {
+    font-size: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 20%;
+}
+.message {
+    margin-bottom: 25px;
+}
+.likeCount {
+    cursor: pointer;
+    width: 5%;
+}

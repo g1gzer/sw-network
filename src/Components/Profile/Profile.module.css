@@ -2,14 +2,13 @@
 
 .content {
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-rows: 150px 250px 100%; /* repeat(auto-fill, 10%)*/
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: 150px 250px 100%;
     grid-column: 2 / 6;
     grid-row: 2 / 6;
     background-color: #27282e;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
 }
 .intro {
     grid-column: 1 / 6;

@@ -1,6 +1,7 @@
 .nav {
     grid-column-start: 1;
     grid-row: 2 / 4;
+    height: 400px;
     background-color: #161618;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     border-top-right-radius: 5px;
@@ -14,12 +15,18 @@
     list-style-type:none;
 }
 .nav__inner li {
-    color: #e8e5e0;
-    font-size: 20px;
     margin-bottom: 15px;
     cursor: pointer;
 }
-.nav__inner li:hover {
+.nav__inner li a {
+    color: #e8e5e0;
+    font-size: 20px;
+    text-decoration: none;
+}
+.nav__inner li a:hover {
     color: #abdcff;
     transition: linear 0.2s;
+}
+.nav__inner li a.active {
+    color: #abdcff;
 }

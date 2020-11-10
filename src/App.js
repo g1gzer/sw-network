@@ -1,4 +1,9 @@
 import React from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from "react-router-dom";
 import './App.css';
 import Header from "./Components/Header/Header";
 import Navbar from "./Components/Navbar/Navbar";
@@ -8,13 +13,14 @@ import Dialogs from "./Components/Dialogs/Dialogs";
 
 const App = () => {
     return (
-        <div className='app-wrapper'>
-            <Header/>
-            <Navbar/>
-            {/*<Profile/>*/}
-            <Dialogs/>
-
-        </div>
+        <Router>
+            <div className='app-wrapper'>
+                <Header/>
+                <Navbar/>
+                <Route path='/Dialogs' component={Dialogs}/>
+                <Route path='/Profile' component={Profile}/>
+            </div>
+        </Router>
     );
 }
 

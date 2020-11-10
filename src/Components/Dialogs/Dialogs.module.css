@@ -4,10 +4,33 @@
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 20% 20% 20% 20% 20%;
+    height: 700px;
     grid-column: 2 / 6;
-    grid-row: 2 / 6;
+    grid-row: 2 / 10;
     background-color: #27282e;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+}
+.dialogs {
+    text-decoration: none;
+    grid-column: 1 / 2;
+    grid-row: 1 / 5;
+}
+.dialogs a {
+    color: #e8e5e0;
+    font-size: 18px;
+    text-decoration: none;
+}
+.messages {
+    grid-column: 3 / 6;
+    grid-row: 1 / 5;
+}
+
+.item {
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+.item:first-child {
+    margin-top: 50px;
 }
