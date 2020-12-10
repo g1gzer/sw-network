@@ -9,16 +9,20 @@ import Header from "./Components/Header/Header";
 import Navbar from "./Components/Navbar/Navbar";
 import Profile from "./Components/Profile/Profile";
 import Dialogs from "./Components/Dialogs/Dialogs";
+import {updateNewPostText} from "./Redux/state";
 
 
-const App = () => {
+const App = (props) => {
     return (
         <Router>
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar/>
-                <Route path='/Dialogs' component={Dialogs}/>
-                <Route path='/Profile' component={Profile}/>
+
+                <Route path='/Dialogs' render={ () => <Dialogs state={props.state.dialogsPage} />}/>
+                <Route path='/Profile' render={ () => <Profile profilePage={props.state.profilePage}
+                                                               dispatch={props.dispatch}
+                />}/>
             </div>
         </Router>
     );

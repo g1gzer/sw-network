@@ -2,7 +2,7 @@ import React from 'react';
 import s from './../Dialogs.module.css';
 import {NavLink} from "react-router-dom";
 
-const DialogsItem = (props) => {
+const DialogsItems = (props) => {
     return (
         <div className={s.item}>
             <img className={s.userImage} src={props.userImage}></img>
@@ -12,4 +12,4 @@ const DialogsItem = (props) => {
 }
 
 
-export default DialogsItem;
+export default DialogsItems;

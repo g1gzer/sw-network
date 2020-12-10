@@ -2,7 +2,8 @@
 
 .content {
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-columns:repeat(auto-fill, 20%);
+    /*grid-template-columns: 20% 20% 20% 20% 20%;*/
     grid-template-rows: 20% 20% 20% 20% 20%;
     height: 700px;
     grid-column: 2 / 6;
@@ -14,23 +15,114 @@
 }
 .dialogs {
     text-decoration: none;
-    grid-column: 1 / 2;
-    grid-row: 1 / 5;
+    grid-column: 1 / 3;
+    grid-row: 1 / -1;
+    height: 100%;
+    overflow: scroll;
+    overflow-x:hidden;
 }
-.dialogs a {
+
+
+.messages {
+    grid-column: 3 / 6;
+    grid-row: 1 / 5;
+    height: 100%;
+    overflow: scroll;
+    overflow-x:hidden;
+}
+
+.messages div {
+    margin-left: 20%;
+    margin-bottom: 50px;
+    width: 80%;
+}
+.messages div:first-child {
+    margin-top: 20px;
+}
+
+
+
+
+
+.input {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    grid-column: 3 / 6;
+    grid-row: 5 / 6;
+    border-top: solid #161618 1px;
+}
+.input textarea{
+    width: 100%;
+    background-color: #161618;
+    height: 50px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    resize: none;
+    color: #e8e5e0;
+    font-size: 16px;
+    padding: 10px;
+    margin: 2% 2% 0 2%;
+    outline: none;
+}
+.input textarea:hover{
+    outline: none;
+    border: 1px solid #00a4ff;
+    transition: linear 0.2s;
+}
+.input textarea:focus {
+    outline: none;
+    border: 1px solid #00a4ff;
+}
+
+.input button{
+    margin-right: 5%;
+    width: 30%;
+    height: 40px;
+    background-color: #161618;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #e8e5e0;
+    font-size: 16px;
+}
+.input button:hover {
+    border: 1px solid #00a4ff;
+    transition: linear 0.2s;
+    color: #fff;
+}
+.input button:focus {
+    outline: none;
+}
+
+
+
+
+
+.item {
+    display: flex;
+    height: 80px;
+    padding-left: 50px;
+    border-bottom: solid #161618 1px;
+    align-items: center;
+    cursor: pointer;
+}
+.item:hover {
+    background-color: #3b3d45;
+}
+.item a {
     color: #e8e5e0;
     font-size: 18px;
     text-decoration: none;
 }
-.messages {
-    grid-column: 3 / 6;
-    grid-row: 1 / 5;
-}
-
-.item {
-    margin-left: 50px;
-    margin-bottom: 30px;
-}
 .item:first-child {
-    margin-top: 50px;
+}
+.userImage {
+    width: 60px;
+    height: 60px;
+    border-radius: 200px;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin-left: 4%;
+    cursor: pointer;
 }
