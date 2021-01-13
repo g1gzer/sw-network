@@ -1,5 +1,5 @@
 import reportWebVitals from './reportWebVitals';
-import store from "./Redux/state";
+import store from "./Redux/redux-store";
 import ReactDOM from "react-dom";
 import React from "react";
 import App from "./App";
@@ -23,7 +23,12 @@ export let rerenderEntireTree = (props) => {
 }
 
 rerenderEntireTree(store.getState());
-store.subscribe(rerenderEntireTree); // Callback to state
+
+
+store.subscribe(() => {
+    let state = store.getState();
+    rerenderEntireTree(state);
+}); // Callback to state
 
 
 // If you want to start measuring performance in your app, pass a function

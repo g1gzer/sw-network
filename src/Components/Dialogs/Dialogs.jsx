@@ -22,11 +22,10 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 {messagesElements}
-                {messagesElements}
-                {messagesElements}
+
 
             </div>
-            <DialogsInput/>
+            <DialogsInput state={props.dialogsPage} dispatch={props.dispatch}/>
         </div>
     )
 }

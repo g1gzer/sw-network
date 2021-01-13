@@ -10,8 +10,7 @@ const Profile = (props) => {
         <img src="https://cdn.pixabay.com/photo/2016/06/02/02/33/triangles-1430105_960_720.png"></img>
         </div>
         <UserInfo/>
-        <MyPosts postData={props.profilePage.postData}
-                 newPostText={props.profilePage.newPostText}
+        <MyPosts state={props.state}
                  dispatch={props.dispatch}/>
 
     </div>

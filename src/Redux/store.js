@@ -1,3 +1,8 @@
+
+import profileReducer from "./profileReducer";
+import dialogsReducer from "./dialogsReducer";
+
+
 let store = {
     _state: {
         profilePage: {
@@ -23,6 +28,7 @@ let store = {
                 {id: 4, userImage: "https://cdn.pixabay.com/photo/2014/05/11/13/39/bird-341898_960_720.jpg", name: 'Kolya'},
                 {id: 5, userImage: "https://cdn.pixabay.com/photo/2014/05/11/13/39/bird-341898_960_720.jpg", name: 'Ilya'},
             ],
+            newMessageText: '',
         },
     },
     _callSubscriber() {
@@ -36,23 +42,13 @@ let store = {
 
 
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
-            let newPost = {
-                id:3,
-                userName: 'Gordon Freeman',
-                message: this._state.profilePage.newPostText,
-                likeCount: "♡ 22",
-            };
-            this._state.profilePage.postData.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubscriber(this._state);
-        }
-        else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        }
 
-    },
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.profilePage = dialogsReducer(this._state.dialogsPage, action);
+
+        this._callSubscriber(this._state);
+
+    }
 
 };
 
