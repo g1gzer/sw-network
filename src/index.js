@@ -9,26 +9,24 @@ import {
     Switch,
     Route
 } from "react-router-dom";
+import {Provider} from "react-redux";
 
 
 
-export let rerenderEntireTree = (props) => {
     ReactDOM.render(
         <Router>
-            <App state={store.getState()} dispatch={store.dispatch.bind(store)} />
+            <Provider store={store}>
+                <App/>
+            </Provider>
         </Router>,
         document.getElementById('root')
     );
 
-}
-
-rerenderEntireTree(store.getState());
 
 
-store.subscribe(() => {
-    let state = store.getState();
-    rerenderEntireTree(state);
-}); // Callback to state
+
+
+
 
 
 // If you want to start measuring performance in your app, pass a function

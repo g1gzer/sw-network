@@ -1,30 +1,28 @@
 import React from 'react';
 
-import MyPosts from "./MyPosts";
+import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../../Redux/dialogsReducer";
+import DialogsInput from "./DialogsInput";
+import {connect} from "react-redux";
 
 
 
-const DialogsContainer = (props) => {
 
-    let state = props.store;
 
-    let addPost = () => {
-        let action = addPostActionCreator();
-        props.dispatch(action);
+let mapStateToProps = (state) => {
+    return {
+        newMessageText: state.newMessageText
     }
-
-    let onPostChange = (text) => {
-        let action = updateNewPostTextActionCreator(text);
-        props.dispatch(action);
-    }
-
-    return (
-
-        <MyPosts updateNewPostText={onPostChange}
-                 addPost={addPost}
-                 posts={state.profilePage.postData}
-                 newPostText={state.newPostText}/>
-    )
 }
+let mapDispatchToProps = (dispatch) => {
+    return {
+        onMessageChange: (text) => {
+            dispatch(updateNewMessageTextActionCreator(text));
+        },
+        addMessage: () => {
+            dispatch(addMessageActionCreator());
+        }
+    }
+}
+const DialogsInputContainer = connect(mapStateToProps, mapDispatchToProps)(DialogsInput);
 
-export default DialogsContainer;
+export default DialogsInputContainer;
