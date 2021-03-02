@@ -6,9 +6,9 @@ import DialogsInputContainer from "./DialogsInput/DialogsInputContainer";
 const Dialogs = (props) => {
 
     let dialogsElements = props.dialogsData.map(dialog => <DialogsItems userImage={dialog.userImage}
-                                                                            name={dialog.name} id={dialog.id}/>);
+                                                                            name={dialog.name} key={dialog.id} id={dialog.id}/>);
 
-    let messagesElements = props.messagesData.map(message => <Message text={message.text} id={message.id}/>);
+    let messagesElements = props.messagesData.map(message => <Message text={message.text} key={message.id} id={message.id}/>);
 
     return (
         <div className={s.content}>

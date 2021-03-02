@@ -19,7 +19,7 @@ const Navbar = () => {
                 <a>News</a>
             </li>
             <li>
-                <a>Music</a>
+                <NavLink to='/Users' activeClassName={s.active}>Users</NavLink>
             </li>
         </ul>
     </nav>

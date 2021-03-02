@@ -1,0 +1,22 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / 6;
+    grid-row: 1 / 10;
+    background-color: #27282e;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.title {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border-bottom: 4px solid #00a4ff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #161618;
+}
+.title div {
+    margin-left: 8%;
+}
