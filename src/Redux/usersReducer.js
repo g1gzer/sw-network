@@ -7,9 +7,9 @@ const SET_USERS = 'SET_USERS';
 
 let initialState = {
     users:[
-        // {id: 1, userName: 'Special Spirit', followStatus: false, status: 'Hi, how are you!', location: {city: "Saint-Petersburg", country: "Russia"}},
-        // {id: 2, userName: 'Gordon Freeman', followStatus: true, status: 'Lol it\'s my first post', location: {city: "Moscow", country: "Russia"}},
-        // {id: 3, userName: 'Sanya Volkov', followStatus: false, status: 'Hello. What\'s up?', location: {city: "Kiev", country: "Ukraine"}},
+        {id: 1, userName: 'Special Spirit', followStatus: false, status: 'Hi, how are you!', location: {city: "Saint-Petersburg", country: "Russia"}},
+        {id: 2, userName: 'Gordon Freeman', followStatus: true, status: 'Lol it\'s my first post', location: {city: "Moscow", country: "Russia"}},
+        {id: 3, userName: 'Sanya Volkov', followStatus: false, status: 'Hello. What\'s up?', location: {city: "Kiev", country: "Ukraine"}},
     ],
     newPostText: '',
 };

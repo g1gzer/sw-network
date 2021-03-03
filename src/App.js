@@ -9,7 +9,7 @@ import Header from "./Components/Header/Header";
 import Navbar from "./Components/Navbar/Navbar";
 import Profile from "./Components/Profile/Profile";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
-import Users from "./Components/Users/Users";
+import UsersContainer from "./Components/Users/UsersContainer";
 
 
 
@@ -23,7 +23,7 @@ const App = (props) => {
 
                 <Route path='/Dialogs' render={ () => <DialogsContainer />}/>
                 <Route path='/Profile' render={ () => <Profile />}/>
-                <Route path='/Users' render={ () => <Users />}/>
+                <Route path='/Users' render={ () => <UsersContainer />}/>
             </div>
         </BrowserRouter>
     );

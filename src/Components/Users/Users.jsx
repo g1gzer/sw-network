@@ -2,11 +2,11 @@ import React from 'react';
 import UsersItems from "./UsersItems/UsersItems";
 import s from "./Users.module.css"
 
-let Users = () => {
+let Users = (props) => {
     return (
         <div className={s.content}>
 
-            <UsersItems/>
+            <UsersItems users={props.users}/>
         </div>
     )
 };
