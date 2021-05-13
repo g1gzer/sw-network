@@ -22,11 +22,10 @@ const profileReducer = (state = initialState, action) => {
                 message: state.newPostText,
                 likeCount: "♡ 22",
             };
-
             return {                                                      // stateCopy
                 ...state,
                 postData: [...state.postData, newPost],
-                newPostText: ''
+                newPostText:''
 
             }
         case UPDATE_NEW_POST_TEXT:

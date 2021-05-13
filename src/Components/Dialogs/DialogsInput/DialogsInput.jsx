@@ -10,6 +10,7 @@ const DialogsInput = (props) => {
     let newMessageElement = React.createRef();
     let addMessage = () => {
         props.addMessage();
+        newMessageElement.current.value = '';
     }
     let onMessageChange = () => {
         let text = newMessageElement.current.value;

@@ -1,22 +1,31 @@
 import React from 'react';
-import s from "./item.module.css"
+import s from "./Item.module.css"
 
-let Item = () => {
+
+let Item = (props) => {
+
+
     return <div className={s.item}>
         <img src="https://cdn.pixabay.com/photo/2014/05/11/13/39/bird-341898_960_720.jpg"></img>
 
         <div className={s.inner}>
             <div className={s.userName}>
-                    ffffffff
+                {props.userName}
             </div>
             <div className={s.status}>
-                aaaaaaa
+                {props.status}
             </div>
-            <div className={s.location}>
-                lllllll, asfasfasf
+            <div>
+                {/*{props.location.country}, {props.location.city}*/}
+
             </div>
         </div>
-        <button> Follow</button>
+        {props.followStatus ? <button onClick={() => {
+                props.unfollow(props.id)
+            }}>Unfollow</button>
+            : <button onClick={() => {
+                 props.follow(props.id)
+            }}>Follow</button>}
     </div>
 };
 
