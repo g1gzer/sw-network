@@ -1,10 +1,18 @@
 import React from 'react';
 import Item from "./Item/Item";
 import s from "./UserItems.module.css"
+import * as axios from "axios";
 
 
 let UsersItems = (props) => {
     if (props.users.length === 0 ) {
+
+        axios.get('https://randomuser.me/api/?results=5&nat=us')
+            .then(respons => {
+            console.log(respons.data.results);
+        })
+
+
         props.setUsers([
             {id: 1, userName: 'Special Spirit', followStatus: false, status: 'Hi, how are you!', location: {city: "Saint-Petersburg", country: "Russia"}},
             {id: 2, userName: 'Gordon Freeman', followStatus: true, status: 'Lol it\'s my first post', location: {city: "Moscow", country: "Russia"}},
