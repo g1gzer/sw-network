@@ -4,7 +4,7 @@ import s from "./Item.module.css"
 
 let Item = (props) => {
     return <div className={s.item}>
-        <img src="https://cdn.pixabay.com/photo/2014/05/11/13/39/bird-341898_960_720.jpg"></img>
+        <img src={props.userImage}></img>
 
         <div className={s.inner}>
             <div className={s.userName}>

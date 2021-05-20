@@ -7,9 +7,9 @@ const SET_USERS = 'SET_USERS';
 
 let initialState = {
     users:[
-        {id: 1, userName: 'Special Spirit', followStatus: false, status: 'Hi, how are you!', location: {city: "Saint-Petersburg", country: "Russia"}},
-        {id: 2, userName: 'Gordon Freeman', followStatus: true, status: 'Lol it\'s my first post', location: {city: "Moscow", country: "Russia"}},
-        {id: 3, userName: 'Sanya Volkov', followStatus: false, status: 'Hello. What\'s up?', location: {city: "Kiev", country: "Ukraine"}},
+        // {id: 1, userName: 'Special Spirit', followStatus: false, status: 'Hi, how are you!', location: {city: "Saint-Petersburg", country: "Russia"}},
+        // {id: 2, userName: 'Gordon Freeman', followStatus: true, status: 'Lol it\'s my first post', location: {city: "Moscow", country: "Russia"}},
+        // {id: 3, userName: 'Sanya Volkov', followStatus: false, status: 'Hello. What\'s up?', location: {city: "Kiev", country: "Ukraine"}},
     ]
 };
 
@@ -21,7 +21,7 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: state.users.map(u => {
-                    if (u.id === action.id) {
+                    if (u.id === action.userId) {
                         return {...u, followStatus: true}
                     }
                     return u;
@@ -33,7 +33,7 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state.users,
                 users: state.users.map(u => {
-                    if (u.id === action.id) {
+                    if (u.id === action.userId) {
                         return {...u, followStatus: false}
                     }
                     return u;
@@ -42,6 +42,8 @@ const usersReducer = (state = initialState, action) => {
 
             }
         case SET_USERS: {
+            // console.log({...action.users})
+            // return state;
             return {...state, users: [...state.users, ...action.users]}
         }
         default:
