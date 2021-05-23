@@ -5,13 +5,12 @@ import * as axios from "axios";
 
 
 class Users extends React.Component {
-    constructor(props) {
-        super(props);
-        axios.get('https://randomuser.me/api/?results=5&nat=us')
+    componentDidMount() {
+        axios.get('https://randomuser.me/api/?results=5&nat=us,dk,fr,gb&inc=name,picture,location')
             .then(respons => {
                 let usersArr = [];
                 let i = 0;
-                console.log(respons.data.results);
+                console.log(respons.data)
                 respons.data.results.forEach(el => {
                     i += 1
                     usersArr.push({
@@ -24,10 +23,10 @@ class Users extends React.Component {
                     })
                 })
                 i = 0;
-                console.log(usersArr)
                 this.props.setUsers(usersArr);
             })
     }
+
     render() {
 
 
